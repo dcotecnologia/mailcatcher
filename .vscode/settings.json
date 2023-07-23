@@ -17,5 +17,8 @@
   "files.associations": {
     "*.erb": "erb",
     "*.slim": "slim"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

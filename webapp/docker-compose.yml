@@ -1,0 +1,28 @@
+version: "3.9"
+volumes:
+  node_modules:
+    driver: local
+networks:
+  main:
+    name: main
+    external: true
+services:
+  webapp:
+    image: mailcatcher-webapp
+    stdin_open: true
+    tty: true
+    build:
+      context: .
+      args:
+        - ENVIRONMENT=development
+    volumes:
+      - .:/webapp
+      - node_modules:/webapp/node_modules:rw,delegated
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    networks:
+      - main
+
