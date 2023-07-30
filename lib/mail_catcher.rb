@@ -44,7 +44,7 @@ module MailCatcher
     RbConfig::CONFIG["host_os"].match?(/mswin|mingw/)
   end
 
-  def browseable?
+  def browsable?
     windows? or which? "open"
   end
 
@@ -144,7 +144,7 @@ module MailCatcher
           end
         end
 
-        if browseable?
+        if browsable?
           parser.on("-b", "--browse", "Open web browser") do
             options[:browse] = true
           end
@@ -205,7 +205,7 @@ module MailCatcher
         trap(signal) { EM.add_timer(0) { quit! } }
       end
 
-      # Open the web browser before detatching console
+      # Open the web browser before detaching console
       if options[:browse]
         EventMachine.next_tick do
           browse http_url
