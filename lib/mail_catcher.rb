@@ -201,9 +201,9 @@ module MailCatcher
 
       # Make sure we quit nicely when asked
       # We need to handle outside the trap context, hence the timer
-      %w[INT TERM QUIT].each do |signal|
-        trap(signal) { EM.add_timer(0) { quit! } }
-      end
+      trap("INT") { EM.add_timer(0) { quit! } }
+      trap("TERM") { EM.add_timer(0) { quit! } }
+      trap("QUIT") { EM.add_timer(0) { quit! } } unless windows?
 
       # Open the web browser before detaching console
       if options[:browse]
