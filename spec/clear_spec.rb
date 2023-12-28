@@ -10,7 +10,7 @@ RSpec.describe "Clear", type: :feature do
     deliver_example("plainmail")
 
     # .. should display three emails
-    expect(page).to have_selector("#messages table tbody tr", text: "Plain mail", count: 3)
+    expect(page).to have_css("#messages table tbody tr", text: "Plain mail", count: 3)
 
     # Clicking Clear but cancelling ..
     dismiss_confirm do
@@ -18,7 +18,7 @@ RSpec.describe "Clear", type: :feature do
     end
 
     # .. should still display three emails
-    expect(page).to have_selector("#messages table tbody tr", text: "Plain mail", count: 3)
+    expect(page).to have_css("#messages table tbody tr", text: "Plain mail", count: 3)
 
     # Clicking clear and confirming ..
     accept_confirm "Are you sure you want to clear all messages?" do
@@ -26,6 +26,6 @@ RSpec.describe "Clear", type: :feature do
     end
 
     # .. should display no emails
-    expect(page).not_to have_selector("#messages table tbody tr")
+    expect(page).not_to have_css("#messages table tbody tr")
   end
 end

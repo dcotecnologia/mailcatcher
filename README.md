@@ -6,8 +6,8 @@ Catches mail and serves it through a dream.
 
 ## Stack
 
-- Ruby 3.2.x;
-- Sinatra 3.0.x;
+- Ruby 3.3.x;
+- Sinatra 3.1.x;
 - Thin server 1.8.x;
 - Docker;
 - For more, check the [Gemfile](Gemfile).
@@ -51,7 +51,7 @@ MAILCATCHER_AUTH_PASSWORD=turbando
 - Lists attachments and allows separate downloading of parts.
 - Download original email to view in your native mail client(s).
 - Command line options to override the default SMTP/HTTP IP and port settings.
-- Mail appears instantly if your browser supports [WebSockets][websockets], otherwise updates every thirty seconds.
+- Mail appears instantly if your browser supports websockets, otherwise updates every thirty seconds.
 - Runs as a daemon in the background, optionally in foreground.
 - Sendmail-analogue command, `catchmail`, makes using mailcatcher from PHP a lot easier.
 - Keyboard navigation between messages
@@ -129,8 +129,8 @@ if DEBUG:
 
 There is a Docker image available [on Docker Hub](https://hub.docker.com/r/sj26/mailcatcher):
 
-```
-$ docker run -p 1080 -p 1025 sj26/mailcatcher
+```sh
+docker run -p 1080 -p 1025 sj26/mailcatcher
 Unable to find image 'sj26/mailcatcher:latest' locally
 latest: Pulling from sj26/mailcatcher
 8c6d1654570f: Already exists
@@ -152,25 +152,10 @@ How those ports appear and can be accessed may vary based on your Docker configu
 
 A fairly RESTful URL schema means you can download a list of messages in JSON from `/messages`, each message's metadata with `/messages/:id.json`, and then the pertinent parts with `/messages/:id.html` and `/messages/:id.plain` for the default HTML and plain text version, `/messages/:id/parts/:cid` for individual attachments by CID, or the whole message with `/messages/:id.source`.
 
-## Caveats
-
-- Mail processing is fairly basic but easily modified. If something doesn't work for you, fork and fix it or [file an issue][mailcatcher-issues] and let me know. Include the whole message you're having problems with.
-- Encodings are difficult. MailCatcher does not completely support utf-8 straight over the wire, you must use a mail library which encodes things properly based on SMTP server capabilities.
-
 ## Thanks
 
 MailCatcher is just a mishmash of other people's hard work. Thank you so much to the people who have built the wonderful guts on which this project relies. Thanks to all the contributors from the [original repo](sj26/mailcatcher).
 
-## Donations
-
-I work on MailCatcher mostly in my own spare time. If you've found Mailcatcher useful and would like to help feed me and fund continued development and new features, please [donate via PayPal][donate]. If you'd like a specific feature added to MailCatcher and are willing to pay for it, please [email me](mailto:sj26@sj26.com).
-
 ## License
 
-Copyright © 2010-2019 Samuel Cochran (sj26@sj26.com). Released under the MIT License, see [LICENSE][license] for details.
-
-  [donate]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=522WUPLRWUSKE
-  [license]: https://github.com/sj26/mailcatcher/blob/master/LICENSE
-  [mailcatcher-github]: https://github.com/sj26/mailcatcher
-  [mailcatcher-issues]: https://github.com/sj26/mailcatcher/issues
-  [websockets]: https://tools.ietf.org/html/rfc6455
+Released under the MIT License, see [LICENSE](LICENSE) for details.

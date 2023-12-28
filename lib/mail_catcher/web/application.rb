@@ -120,7 +120,7 @@ module MailCatcher
       get "/messages/:id.html" do
         id = params[:id].to_i
         if (part = Mail.message_part_html(id))
-          content_type :html, charset: (part["charset"] || "utf8")
+          content_type :html, charset: part["charset"] || "utf8"
 
           body = part["body"]
 
@@ -136,7 +136,7 @@ module MailCatcher
       get "/messages/:id.plain" do
         id = params[:id].to_i
         if (part = Mail.message_part_plain(id))
-          content_type part["type"], charset: (part["charset"] || "utf8")
+          content_type part["type"], charset: part["charset"] || "utf8"
           part["body"]
         else
           not_found
@@ -166,7 +166,7 @@ module MailCatcher
       get "/messages/:id/parts/:cid" do
         id = params[:id].to_i
         if (part = Mail.message_part_cid(id, params[:cid]))
-          content_type part["type"], charset: (part["charset"] || "utf8")
+          content_type part["type"], charset: part["charset"] || "utf8"
           attachment part["filename"] if part["is_attachment"] == 1
           body part["body"].to_s
         else

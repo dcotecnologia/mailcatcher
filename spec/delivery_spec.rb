@@ -60,7 +60,7 @@ RSpec.describe MailCatcher, type: :feature do
 
     # Do not reload, make sure that the message appears via websockets
 
-    expect(page).to have_selector("#messages table tbody tr:first-of-type", text: "Plain mail")
+    expect(page).to have_css("#messages table tbody tr:first-of-type", text: "Plain mail")
 
     expect(message_from_element).to have_text(DEFAULT_FROM)
     expect(message_to_element).to have_text(DEFAULT_TO)
@@ -71,7 +71,7 @@ RSpec.describe MailCatcher, type: :feature do
 
     expect(source_tab_element).to be_visible
     expect(plain_tab_element).to be_visible
-    expect(page).not_to have_selector("#message header .format.html a")
+    expect(page).not_to have_css("#message header .format.html a")
 
     plain_tab_element.click
 
@@ -93,7 +93,7 @@ RSpec.describe MailCatcher, type: :feature do
 
     # Do not reload, make sure that the message appears via websockets
 
-    expect(page).to have_selector("#messages table tbody tr:first-of-type", text: "Test HTML Mail")
+    expect(page).to have_css("#messages table tbody tr:first-of-type", text: "Test HTML Mail")
 
     expect(message_from_element).to have_text(DEFAULT_FROM)
     expect(message_to_element).to have_text(DEFAULT_TO)
@@ -103,7 +103,7 @@ RSpec.describe MailCatcher, type: :feature do
     message_row_element.click
 
     expect(source_tab_element).to be_visible
-    expect(page).not_to have_selector("#message header .format.plain a")
+    expect(page).not_to have_css("#message header .format.plain a")
     expect(html_tab_element).to be_visible
 
     html_tab_element.click
@@ -128,7 +128,7 @@ RSpec.describe MailCatcher, type: :feature do
 
     # Do not reload, make sure that the message appears via websockets
 
-    expect(page).to have_selector("#messages table tbody tr:first-of-type", text: "Test Multipart Mail")
+    expect(page).to have_css("#messages table tbody tr:first-of-type", text: "Test Multipart Mail")
 
     expect(message_from_element).to have_text(DEFAULT_FROM)
     expect(message_to_element).to have_text(DEFAULT_TO)
@@ -171,7 +171,7 @@ RSpec.describe MailCatcher, type: :feature do
 
     # Do not reload, make sure that the message appears via websockets
 
-    expect(page).to have_selector("#messages table tbody tr:first-of-type", text: "Test Multipart UTF8 Mail")
+    expect(page).to have_css("#messages table tbody tr:first-of-type", text: "Test Multipart UTF8 Mail")
 
     expect(message_from_element).to have_text(DEFAULT_FROM)
     expect(message_to_element).to have_text(DEFAULT_TO)
@@ -222,7 +222,7 @@ RSpec.describe MailCatcher, type: :feature do
 
     # Do not reload, make sure that the message appears via websockets
 
-    expect(page).to have_selector("#messages table tbody tr:first-of-type", text: "Test Attachment Mail")
+    expect(page).to have_css("#messages table tbody tr:first-of-type", text: "Test Attachment Mail")
 
     expect(message_from_element).to have_text(DEFAULT_FROM)
     expect(message_to_element).to have_text(DEFAULT_TO)

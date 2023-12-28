@@ -12,7 +12,7 @@ module EventMachine
   # Monkey patch fix for 10deb4
   # See https://github.com/eventmachine/eventmachine/issues/569
   def self.reactor_running?
-    (@reactor_running || false)
+    @reactor_running || false
   end
 end
 
@@ -58,7 +58,7 @@ module MailCatcher
 
   def log_exception(message, context, exception)
     gems_paths = (Gem.path | [Gem.default_dir]).map { |path| Regexp.escape(path) }
-    gems_regexp = %r{(?:#{gems_paths.join("|")})/gems/([^/]+)-([\w.]+)/(.*)}
+    gems_regexp = %r{(?:#{gems_paths.join('|')})/gems/([^/]+)-([\w.]+)/(.*)}
     gems_replace = '\1 (\2) \3'
 
     puts "*** #{message}: #{context.inspect}"

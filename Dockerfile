@@ -1,4 +1,4 @@
-FROM ruby:3.2.2-slim-bullseye
+FROM ruby:3.3.0-slim-bullseye
 
 LABEL org.opencontainers.image.source=https://github.com/dcotecnologia/mailcatcher
 
