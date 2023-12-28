@@ -6,6 +6,13 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+## [1.1.0] - 2023-12-28
+
+### Changed
+
+- Stack update with Ruby 3.3.x by @danilogco
+- Sync with the upstream repository by @danilogco
+
 ## [1.0.0] - 2023-07-21
 
 ### Added
