@@ -55,7 +55,7 @@ GEM
       net-protocol
     net-protocol (0.2.2)
       timeout
-    net-smtp (0.4.0)
+    net-smtp (0.4.0.1)
       net-protocol
     nokogiri (1.16.0-aarch64-linux)
       racc (~> 1.4)
