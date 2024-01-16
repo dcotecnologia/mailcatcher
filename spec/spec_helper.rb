@@ -21,7 +21,20 @@ HTTP_PORT = 20_080
 # Use headless chrome by default
 Capybara.default_driver = :selenium
 Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new app, browser: :chrome
+  opts = Selenium::WebDriver::Chrome::Options.new
+
+  opts.add_argument('disable-gpu')
+  opts.add_argument('force-device-scale-factor=1')
+  opts.add_argument('window-size=1400,900')
+
+  # Use NO_HEADLESS to open real chrome when debugging tests
+  unless ENV["NO_HEADLESS"]
+    opts.add_argument('headless=new')
+  end
+
+  Capybara::Selenium::Driver.new app, browser: :chrome,
+    service: Selenium::WebDriver::Service.chrome(log: File.expand_path("../tmp/chromedriver.log", __dir__)),
+    options: opts
 end
 
 Capybara.configure do |config|
