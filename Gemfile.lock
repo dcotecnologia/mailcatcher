@@ -55,7 +55,7 @@ GEM
       net-protocol
     net-protocol (0.2.2)
       timeout
-    net-smtp (0.4.0)
+    net-smtp (0.5.0)
       net-protocol
     nokogiri (1.16.0-aarch64-linux)
       racc (~> 1.4)
@@ -191,7 +191,7 @@ DEPENDENCIES
   eventmachine (~> 1.2.7)
   faye-websocket (~> 0.11.3)
   mail (~> 2.8.1)
-  net-smtp (~> 0.4.0)
+  net-smtp (~> 0.5.0)
   pry-byebug
   rake (~> 13.1.0)
   rerun
