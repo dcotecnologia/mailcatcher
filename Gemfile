@@ -7,7 +7,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem "eventmachine", "~> 1.2.7"
 gem "faye-websocket", "~> 0.11.3"
 gem "mail", "~> 2.8.1"
-gem "net-smtp", "~> 0.4.0"
+gem "net-smtp", "~> 0.5.0"
 gem "rake", "~> 13.1.0"
 gem "sinatra", "~> 3.1.0"
 gem "sinatra-basic-auth"
