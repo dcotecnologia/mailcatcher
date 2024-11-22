@@ -6234,7 +6234,7 @@ function() {
         }
         ,
         e.prototype.addMessage = function(e) {
-            return $("<tr />").attr("data-message-id", e.id.toString()).append($("<td/>").text(e.sender || "No sender").toggleClass("blank", !e.sender)).append($("<td/>").text((e.recipients || []).join(", ") || "No receipients").toggleClass("blank", !e.recipients.length)).append($("<td/>").text(e.subject || "No subject").toggleClass("blank", !e.subject)).append($("<td/>").text(this.formatDate(e.created_at))).prependTo($("#messages tbody")),
+            return $("<tr />").attr("data-message-id", e.id.toString()).append($("<td/>").text(e.sender || "No sender").toggleClass("blank", !e.sender)).append($("<td/>").text((e.recipients || []).join(", ") || "No recipients").toggleClass("blank", !e.recipients.length)).append($("<td/>").text(e.subject || "No subject").toggleClass("blank", !e.subject)).append($("<td/>").text(this.formatDate(e.created_at))).prependTo($("#messages tbody")),
             this.updateMessagesCount()
         }
         ,
