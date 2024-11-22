@@ -5,7 +5,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     base64 (0.2.0)
-    brakeman (6.1.1)
+    brakeman (6.2.2)
       racc
     bundler-audit (0.9.1)
       bundler (>= 1.2.0, < 3)
@@ -81,7 +81,7 @@ GEM
       byebug (~> 11.0)
       pry (>= 0.13, < 0.15)
     public_suffix (5.0.4)
-    racc (1.7.3)
+    racc (1.8.1)
     rack (2.2.8)
     rack-protection (3.2.0)
       base64 (>= 0.1.0)
