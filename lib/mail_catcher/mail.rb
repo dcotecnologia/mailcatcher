@@ -65,9 +65,9 @@ module MailCatcher
       end
     end
 
-    def add_message_part(*args)
+    def add_message_part(*)
       @add_message_part_query ||= db.prepare("INSERT INTO message_part (message_id, cid, type, is_attachment, filename, charset, body, size, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))")
-      @add_message_part_query.execute(*args)
+      @add_message_part_query.execute(*)
     end
 
     def latest_created_at

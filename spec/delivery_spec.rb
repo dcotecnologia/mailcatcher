@@ -71,12 +71,12 @@ RSpec.describe MailCatcher, type: :feature do
 
     expect(source_tab_element).to be_visible
     expect(plain_tab_element).to be_visible
-    expect(page).not_to have_css("#message header .format.html a")
+    expect(page).to have_no_css("#message header .format.html a")
 
     plain_tab_element.click
 
     within_frame do
-      expect(body_element).not_to have_text("Subject: Plain mail")
+      expect(body_element).to have_no_text("Subject: Plain mail")
       expect(body_element).to have_text("Here's some text")
     end
 
@@ -103,21 +103,21 @@ RSpec.describe MailCatcher, type: :feature do
     message_row_element.click
 
     expect(source_tab_element).to be_visible
-    expect(page).not_to have_css("#message header .format.plain a")
+    expect(page).to have_no_css("#message header .format.plain a")
     expect(html_tab_element).to be_visible
 
     html_tab_element.click
 
     within_frame do
       expect(page).to have_text("Yo, you slimey scoundrel.")
-      expect(page).not_to have_text("Content-Type: text/html")
-      expect(page).not_to have_text("Yo, you <em>slimey scoundrel</em>.")
+      expect(page).to have_no_text("Content-Type: text/html")
+      expect(page).to have_no_text("Yo, you <em>slimey scoundrel</em>.")
     end
 
     source_tab_element.click
 
     within_frame do
-      expect(page).not_to have_text("Yo, you slimey scoundrel.")
+      expect(page).to have_no_text("Yo, you slimey scoundrel.")
       expect(page).to have_text("Content-Type: text/html")
       expect(page).to have_text("Yo, you <em>slimey scoundrel</em>.")
     end
@@ -145,16 +145,16 @@ RSpec.describe MailCatcher, type: :feature do
 
     within_frame do
       expect(page).to have_text "Plain text mail"
-      expect(page).not_to have_text "HTML mail"
-      expect(page).not_to have_text "Content-Type: multipart/alternative; boundary=BOUNDARY--198849662"
+      expect(page).to have_no_text "HTML mail"
+      expect(page).to have_no_text "Content-Type: multipart/alternative; boundary=BOUNDARY--198849662"
     end
 
     html_tab_element.click
 
     within_frame do
-      expect(page).not_to have_text "Plain text mail"
+      expect(page).to have_no_text "Plain text mail"
       expect(page).to have_text "HTML mail"
-      expect(page).not_to have_text "Content-Type: multipart/alternative; boundary=BOUNDARY--198849662"
+      expect(page).to have_no_text "Content-Type: multipart/alternative; boundary=BOUNDARY--198849662"
     end
 
     source_tab_element.click
@@ -188,16 +188,16 @@ RSpec.describe MailCatcher, type: :feature do
 
     within_frame do
       expect(page).to have_text "Plain text mail"
-      expect(page).not_to have_text "© HTML mail"
-      expect(page).not_to have_text "Content-Type: multipart/alternative; boundary=BOUNDARY--198849662"
+      expect(page).to have_no_text "© HTML mail"
+      expect(page).to have_no_text "Content-Type: multipart/alternative; boundary=BOUNDARY--198849662"
     end
 
     html_tab_element.click
 
     within_frame do
-      expect(page).not_to have_text "Plain text mail"
+      expect(page).to have_no_text "Plain text mail"
       expect(page).to have_text "© HTML mail"
-      expect(page).not_to have_text "Content-Type: multipart/alternative; boundary=BOUNDARY--198849662"
+      expect(page).to have_no_text "Content-Type: multipart/alternative; boundary=BOUNDARY--198849662"
     end
 
     source_tab_element.click
