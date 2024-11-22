@@ -22,7 +22,6 @@ end
 group :development, :lint do
   gem "rubocop"
   gem "rubocop-capybara", require: false
-  gem "rubocop-i18n", require: false
   gem "rubocop-packaging", require: false
   gem "rubocop-performance", require: false
   gem "rubocop-rake", require: false

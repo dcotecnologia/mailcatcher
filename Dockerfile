@@ -1,6 +1,7 @@
-FROM ruby:3.3.0-slim-bullseye
-MAINTAINER Danilo Carolino <danilogcarolino@gmail.com>
+FROM ruby:3.3.6-slim-bullseye
 
+
+LABEL org.opencontainers.image.authors="danilogcarolino@gmail.com"
 LABEL org.opencontainers.image.source=https://github.com/dcotecnologia/mailcatcher
 
 ARG ENVIRONMENT=production
@@ -12,7 +13,7 @@ ENV RACK_ENV=$ENVIRONMENT
 ENV MAILCATCHER_AUTH_USER=$MAILCATCHER_AUTH_USER
 ENV MAILCATCHER_AUTH_PASSWORD=$MAILCATCHER_AUTH_PASSWORD
 
-ENV GEM_HOME=/usr/local/lib/ruby/gems/3.2.0
+ENV GEM_HOME=/usr/local/lib/ruby/gems/3.3.0
 ENV PATH=$PATH:/usr/local/bundle/bin
 
 RUN apt-get update -qq

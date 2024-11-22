@@ -26,6 +26,6 @@ RSpec.describe "Clear", type: :feature do
     end
 
     # .. should display no emails
-    expect(page).not_to have_css("#messages table tbody tr")
+    expect(page).to have_no_css("#messages table tbody tr")
   end
 end
