@@ -27,7 +27,7 @@ group :development, :lint do
   gem "rubocop-performance", require: false
   gem "rubocop-rake", require: false
   gem "rubocop-rspec", require: false
-  gem "rubocop-thread_safety", "~> 0.5.1", require: false
+  gem "rubocop-thread_safety", "~> 0.6.0", require: false
 end
 
 group :test do
