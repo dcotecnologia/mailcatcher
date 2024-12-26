@@ -166,12 +166,16 @@ GEM
       tilt (~> 2.0)
     sinatra-basic-auth (0.1.0)
       sinatra
-    sqlite3 (1.7.3-aarch64-linux)
-    sqlite3 (1.7.3-arm-linux)
-    sqlite3 (1.7.3-arm64-darwin)
-    sqlite3 (1.7.3-x86-linux)
-    sqlite3 (1.7.3-x86_64-darwin)
-    sqlite3 (1.7.3-x86_64-linux)
+    sqlite3 (2.5.0-aarch64-linux-gnu)
+    sqlite3 (2.5.0-aarch64-linux-musl)
+    sqlite3 (2.5.0-arm-linux-gnu)
+    sqlite3 (2.5.0-arm-linux-musl)
+    sqlite3 (2.5.0-arm64-darwin)
+    sqlite3 (2.5.0-x86-linux-gnu)
+    sqlite3 (2.5.0-x86-linux-musl)
+    sqlite3 (2.5.0-x86_64-darwin)
+    sqlite3 (2.5.0-x86_64-linux-gnu)
+    sqlite3 (2.5.0-x86_64-linux-musl)
     thin (1.8.2)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
@@ -226,7 +230,7 @@ DEPENDENCIES
   selenium-webdriver
   sinatra (~> 3.2.0)
   sinatra-basic-auth
-  sqlite3 (~> 1.7.0)
+  sqlite3 (~> 2.5.0)
   thin (~> 1.8.2)
 
 BUNDLED WITH
