@@ -11,8 +11,8 @@ gem "net-smtp", "~> 0.5.0"
 gem "rake", "~> 13.2.1"
 gem "sinatra", "~> 3.2.0"
 gem "sinatra-basic-auth"
-gem "sqlite3", "~> 2.5.0"
-gem "thin", "~> 1.8.2"
+gem "sqlite3", "~> 2.6.0"
+gem "thin"
 
 group :development do
   gem "pry-byebug"

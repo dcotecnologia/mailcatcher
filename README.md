@@ -6,7 +6,7 @@ Catches mail and serves it through a dream.
 
 ## Stack
 
-- Ruby 3.3.x;
+- Ruby 3.4.x;
 - Sinatra 3.1.x;
 - Thin server 1.8.x;
 - Docker;
@@ -14,7 +14,7 @@ Catches mail and serves it through a dream.
 
 ## About the project
 
-This is a fork of MailCatcher that runs a super simple SMTP server which catches any message sent to it to display in a web interface. Run mailcatcher, set your favourite app to deliver to smtp://localhost:1025 instead of your default SMTP server, then check out http://localhost:1080 to see the mail that's arrived so far.
+This is a fork of MailCatcher that runs a super simple SMTP server which catches any message sent to it to display in a web interface. Run mailcatcher, set your favourite app to deliver to smtp://localhost:1025 instead of your default SMTP server, then check out <http://localhost:1080> to see the mail that's arrived so far.
 
 The main differences about our projects are:
 
